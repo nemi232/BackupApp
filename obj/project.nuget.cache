@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "0zJea/itmkM=",
+  "success": true,
+  "projectFilePath": "/Users/majakozlowska/Desktop/Xop/Xop.csproj",
+  "expectedPackageFiles": [
+    "/Users/majakozlowska/.nuget/packages/octokit/11.0.1/octokit.11.0.1.nupkg.sha512",
+    "/Users/majakozlowska/.nuget/packages/restsharp/111.1.0/restsharp.111.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
