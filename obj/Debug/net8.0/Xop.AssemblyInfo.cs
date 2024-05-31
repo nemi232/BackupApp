@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Xop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+940ac97a2ae3a5338cbc052de3d6f9bd17c5b2f9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Xop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Xop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -83,11 +83,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/majakozlowska/Desktop/Xop/Xop.csproj",
+      "projectUniqueName": "/Users/majakozlowska/Desktop/31May/XDown-/Xop.csproj",
       "projectName": "Xop",
-      "projectPath": "/Users/majakozlowska/Desktop/Xop/Xop.csproj",
+      "projectPath": "/Users/majakozlowska/Desktop/31May/XDown-/Xop.csproj",
       "packagesPath": "/Users/majakozlowska/.nuget/packages/",
-      "outputPath": "/Users/majakozlowska/Desktop/Xop/obj/",
+      "outputPath": "/Users/majakozlowska/Desktop/31May/XDown-/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/majakozlowska/.nuget/NuGet/NuGet.Config"
