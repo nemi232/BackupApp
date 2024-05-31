@@ -25,8 +25,9 @@ namespace GitBackupApp
             foreach (var repo in repositories)
             {
                 Console.WriteLine(repo.FullName);
+                Console.WriteLine("newahit")
             }
-
+            //dusduhhd
             // Select repository
             Console.WriteLine("\nEnter the index of the repository to backup:");
             int selectedIndex = int.Parse(Console.ReadLine()) - 1; // Assuming user input is 1-indexed
@@ -71,7 +72,7 @@ namespace GitBackupApp
 
 
         //new comm 
-        
+
 
         static void StoreBackupRecord(string repositoryName, string fileName)
         {
