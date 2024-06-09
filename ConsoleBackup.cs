@@ -32,7 +32,7 @@ namespace GitBackupApp
 
             // Select repository
             Console.WriteLine("\nEnter the index of the repository to backup:");
-            int selectedIndex = int.Parse(Console.ReadLine()) - 1; // Assuming user input is 1-indexed
+            int selectedIndex = int.Parse(Console.ReadLine()) - 1;
             var selectedRepo = repositories[selectedIndex];
 
             Console.WriteLine(selectedRepo.Name);
@@ -40,10 +40,10 @@ namespace GitBackupApp
             // Download issues for selected repository
             var issues = await github.Issue.GetAllForRepository(selectedRepo.Owner.Login, selectedRepo.Name);
 
-            // Encrypt and save issues to file            // Encrypt and save issues to file
+            // Encrypt and save issues to file            
             string encryptedFileName = $"{selectedRepo.Name}_{DateTime.Now:yyyy-MM-dd}.txt";
 
-            // Concatenate all issues into a single string
+            //  all issues into a single string
             StringBuilder stringBuilder = new StringBuilder();
             int num =1;
             if (issues != null && issues.Any()){
@@ -60,7 +60,7 @@ namespace GitBackupApp
             string allIssuesText = stringBuilder.ToString();
 
             // Generate random key and IV
-            byte[] key = Encryption.GenerateRandomKey(256); // 256-bit key size
+            byte[] key = Encryption.GenerateRandomKey(256); 
             byte[] iv = Encryption.GenerateRandomIV();
 
             // Encrypt the issues text
@@ -96,7 +96,7 @@ namespace GitBackupApp
             }
             else
             {
-                Console.WriteLine("Exiting...");
+                Console.WriteLine("Exited");
             }
          }
 
