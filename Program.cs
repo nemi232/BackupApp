@@ -5,6 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Octokit; // Assuming GitHub API is used
+using System.Data.SQLite;
 
 namespace GitBackupApp
 {
@@ -13,7 +14,6 @@ namespace GitBackupApp
 
         public static async Task Main(string[] args)
         {
-
             // Authentication with GitHub
             var github = new GitHubClient(new ProductHeaderValue("May"));
             var tokenAuth = new Credentials("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");
@@ -34,7 +34,7 @@ namespace GitBackupApp
             Console.WriteLine("\nEnter the index of the repository to backup:");
             int selectedIndex = int.Parse(Console.ReadLine()) - 1; // Assuming user input is 1-indexed
             var selectedRepo = repositories[selectedIndex];
-
+            
             Console.WriteLine(selectedRepo.Name);
 
             // Download issues for selected repository
@@ -68,14 +68,28 @@ namespace GitBackupApp
 
             // Write encrypted data to file
             File.WriteAllBytes(encryptedFileName, encryptedData);
+            InsertIntoDatabase(encryptedFileName, DateTime.Now);
 
             Console.WriteLine($"Issues encrypted and saved to {encryptedFileName}");
 
+            //ask the user if wants to decrypt
             AskForDecryption(encryptedFileName, key, iv);
-            // Store backup record in database
-            // StoreBackupRecord(selectedRepo.FullName, encryptedFileName);
-
-            // Console.WriteLine("\nBackup completed successfully.");
+           
+           //
+        }
+            public static void InsertIntoDatabase(string fileName, DateTime date)
+        {
+            using (var connection = new SQLiteConnection("Data Source= source.db"))
+            {
+                connection.Open();
+                using (var command = new SQLiteCommand(connection))
+                {
+                    command.CommandText = "CREATE TABLE IF NOT EXISTS EncryptedFiles (FileName TEXT, Date TEXT)";
+                    command.ExecuteNonQuery();
+                    command.CommandText = $"INSERT INTO EncryptedFiles (FileName, Date) VALUES ('{fileName}', '{date:yyyy-MM-dd HH:mm:ss}')";
+                    command.ExecuteNonQuery();
+                }
+            }
         }
         public static void AskForDecryption(string encryptedFileName, byte[] key, byte[] iv)
         {

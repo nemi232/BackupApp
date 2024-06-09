@@ -47,6 +47,10 @@
               "target": "Package",
               "version": "[8.0.6, )"
             },
+            "Microsoft.Data.Sqlite.Core": {
+              "target": "Package",
+              "version": "[9.0.0-preview.4.24267.1, )"
+            },
             "Octokit": {
               "target": "Package",
               "version": "[11.0.1, )"
@@ -54,6 +58,14 @@
             "RestSharp": {
               "target": "Package",
               "version": "[111.1.0, )"
+            },
+            "SQLitePCLRaw.core": {
+              "target": "Package",
+              "version": "[2.1.8, )"
+            },
+            "System.Data.SQLite": {
+              "target": "Package",
+              "version": "[1.0.118, )"
             }
           },
           "imports": [
