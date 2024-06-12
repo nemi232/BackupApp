@@ -11,6 +11,6 @@ a new file. Then it asks user if they want to decrypt a file.
 	
 ## Technologies
 Project is created with:
-* .NET
+* .NET 8.
 * AES enryption algorithm
 * SQLite
