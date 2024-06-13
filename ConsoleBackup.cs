@@ -16,9 +16,10 @@ namespace GitBackupApp
 
             // Authentication with GitHub
             var github = new GitHubClient(new ProductHeaderValue("May"));
-            var tokenAuth = new Credentials("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");
+            var tokenAuth = new Credentials("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");
             github.Credentials = tokenAuth;
 
+            
             // Download list of private repositories
             var repositories = await github.Repository.GetAllForCurrent();
             int index = 1;
@@ -31,8 +32,16 @@ namespace GitBackupApp
             }
 
             // Select repository
+            if(repositories.Count != 0){
+
             Console.WriteLine("\nEnter the index of the repository to backup:");
             int selectedIndex = int.Parse(Console.ReadLine()) - 1;
+            while(selectedIndex > repositories.Count){
+                Console.WriteLine("Give a valid index point ");
+                 selectedIndex = int.Parse(Console.ReadLine()) - 1;
+
+            }
+            
             var selectedRepo = repositories[selectedIndex];
 
             Console.WriteLine(selectedRepo.Name);
@@ -71,7 +80,10 @@ namespace GitBackupApp
 
             Console.WriteLine($"Issues encrypted and saved to {encryptedFileName}");
 
-            AskForDecryption(encryptedFileName, key, iv);
+            AskForDecryption(encryptedFileName, key, iv);}
+            else{
+                Console.WriteLine("There are no private repositories...");
+            }
             // Store backup record in database
             // StoreBackupRecord(selectedRepo.FullName, encryptedFileName);
 

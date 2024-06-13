@@ -1,18 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "uDdvQOnAeTE=",
+  "dgSpecHash": "EJlhhFHdeYM=",
   "success": true,
-  "projectFilePath": "/Users/majakozlowska/Desktop/31May/XDown-/Xop.csproj",
+  "projectFilePath": "C:\\Users\\Xopero\\BackupApp\\Xop.csproj",
   "expectedPackageFiles": [
-    "/Users/majakozlowska/.nuget/packages/microsoft.data.sqlite/8.0.6/microsoft.data.sqlite.8.0.6.nupkg.sha512",
-    "/Users/majakozlowska/.nuget/packages/microsoft.data.sqlite.core/8.0.6/microsoft.data.sqlite.core.8.0.6.nupkg.sha512",
-    "/Users/majakozlowska/.nuget/packages/octokit/11.0.1/octokit.11.0.1.nupkg.sha512",
-    "/Users/majakozlowska/.nuget/packages/restsharp/111.1.0/restsharp.111.1.0.nupkg.sha512",
-    "/Users/majakozlowska/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.1.6/sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
-    "/Users/majakozlowska/.nuget/packages/sqlitepclraw.core/2.1.6/sqlitepclraw.core.2.1.6.nupkg.sha512",
-    "/Users/majakozlowska/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.1.6/sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512",
-    "/Users/majakozlowska/.nuget/packages/sqlitepclraw.provider.e_sqlite3/2.1.6/sqlitepclraw.provider.e_sqlite3.2.1.6.nupkg.sha512",
-    "/Users/majakozlowska/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512"
+    "C:\\Users\\Xopero\\.nuget\\packages\\microsoft.data.sqlite\\8.0.6\\microsoft.data.sqlite.8.0.6.nupkg.sha512",
+    "C:\\Users\\Xopero\\.nuget\\packages\\microsoft.data.sqlite.core\\8.0.6\\microsoft.data.sqlite.core.8.0.6.nupkg.sha512",
+    "C:\\Users\\Xopero\\.nuget\\packages\\octokit\\11.0.1\\octokit.11.0.1.nupkg.sha512",
+    "C:\\Users\\Xopero\\.nuget\\packages\\restsharp\\111.1.0\\restsharp.111.1.0.nupkg.sha512",
+    "C:\\Users\\Xopero\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.6\\sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
+    "C:\\Users\\Xopero\\.nuget\\packages\\sqlitepclraw.core\\2.1.6\\sqlitepclraw.core.2.1.6.nupkg.sha512",
+    "C:\\Users\\Xopero\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.6\\sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512",
+    "C:\\Users\\Xopero\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.6\\sqlitepclraw.provider.e_sqlite3.2.1.6.nupkg.sha512",
+    "C:\\Users\\Xopero\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
   ],
   "logs": []
 }
