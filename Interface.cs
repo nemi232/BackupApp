@@ -63,7 +63,6 @@ using Octokit; // Assuming GitHub API is used
                 Console.WriteLine("Exited");
             }
          }
-
         
         }
 
