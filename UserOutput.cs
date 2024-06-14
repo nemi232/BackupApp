@@ -7,10 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Octokit; // Assuming GitHub API is used
     
-    namespace GitBackupApp{
-        public static class Interface 
+    namespace GitBackupApp{ 
+        public  class UserOutput : IOutput
         {
-            public static async void PrintRepos(GitHubClient github)
+            
+        public  async void PrintRepos(GitHubClient github)
         {
             var repositories = await github.Repository.GetAllForCurrent();
             int index = 1;
@@ -23,16 +24,17 @@ using Octokit; // Assuming GitHub API is used
             }
         }
 
-        public static void PrintFiles(StringBuilder stringBuilder, string encryptedFileName){
+        public  void PrintFiles(StringBuilder stringBuilder, string encryptedFileName){
+            IEncryption encrypt = new Encryption();
             
             string allIssuesText = stringBuilder.ToString();
 
             // Generate random key and IV
-            byte[] key = Encryption.GenerateRandomKey(256); 
-            byte[] iv = Encryption.GenerateRandomIV();
+            byte[] key = encrypt.GenerateRandomKey(256); 
+            byte[] iv = encrypt.GenerateRandomIV();
 
             // Encrypt the issues text
-            byte[] encryptedData = Encryption.Encrypt(allIssuesText, key, iv);
+            byte[] encryptedData = encrypt.Encrypt(allIssuesText, key, iv);
 
             // Write encrypted data to file
             File.WriteAllBytes(encryptedFileName, encryptedData);
@@ -41,8 +43,9 @@ using Octokit; // Assuming GitHub API is used
 
             AskForDecryption(encryptedFileName, key, iv);
         }
-        public static void AskForDecryption(string encryptedFileName, byte[] key, byte[] iv)
+        public void AskForDecryption(string encryptedFileName, byte[] key, byte[] iv)
         {
+            IEncryption encrypt = new Encryption();
             Console.WriteLine("Do you want to decrypt the file? (Y/N)");
             string response = Console.ReadLine().ToUpper();
 
@@ -52,7 +55,7 @@ using Octokit; // Assuming GitHub API is used
                 byte[] encryptedData = File.ReadAllBytes(encryptedFileName);
 
                 // Decrypt the data
-                string decryptedText = Encryption.Decrypt(encryptedData, key, iv);
+                string decryptedText = encrypt.Decrypt(encryptedData, key, iv);
 
                 // Display decrypted content
                 Console.WriteLine("\nDecrypted Issues:");
@@ -63,8 +66,8 @@ using Octokit; // Assuming GitHub API is used
                 Console.WriteLine("Exited");
             }
          }
-        
-        }
+
+    }
 
 
 
