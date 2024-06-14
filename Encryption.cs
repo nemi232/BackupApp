@@ -5,12 +5,13 @@ using System.Net.Security;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using Octokit; // Assuming GitHub API is used
-    
-    namespace GitBackupApp{
-    public static class Encryption
+using Octokit;
+
+namespace GitBackupApp
+{
+    public class Encryption : IEncryption
     {
-        public static byte[] GenerateRandomKey(int keySize)
+        public byte[] GenerateRandomKey(int keySize)
         {
             using (Aes aes = Aes.Create())
             {
@@ -20,7 +21,7 @@ using Octokit; // Assuming GitHub API is used
             }
         }
 
-        public static byte[] GenerateRandomIV()
+        public byte[] GenerateRandomIV()
         {
             using (Aes aes = Aes.Create())
             {
@@ -29,7 +30,7 @@ using Octokit; // Assuming GitHub API is used
             }
         }
 
-        public static byte[] Encrypt(string plainText, byte[] key, byte[] iv)
+        public byte[] Encrypt(string plainText, byte[] key, byte[] iv)
         {
             byte[] cipheredtext;
             using (Aes aes = Aes.Create())
@@ -51,7 +52,7 @@ using Octokit; // Assuming GitHub API is used
             return cipheredtext;
         }
 
-        public static string Decrypt(byte[] cipheredtext, byte[] key, byte[] iv)
+        public string Decrypt(byte[] cipheredtext, byte[] key, byte[] iv)
 
         {
             string plainText = String.Empty;
@@ -73,4 +74,5 @@ using Octokit; // Assuming GitHub API is used
         }
 
 
-    }}
+    }
+}
